@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Üsküdar University - Resit Exams System</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    .university-header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin: -20px -20px 20px -20px;
+      border-radius: 5px ;
+    }
+    .login-section {
+      padding: 20px 0;
+    }
+    .login-title {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .form-actions a.login {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .form-actions a:hover {
+      text-decoration: underline;
+    }
+    .form-actions a.login:hover {
+      background-color: #0056b3;
+      text-decoration: none;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>Üsküdar University</header>
+  <div class="wrapper">
+    <div class="container2">
+      <div class="university-header">
+        <h2>RESIT EXAMS SYSTEM</h2>
+      </div>
+
+      <div class="login-section">
+        <div class="login-box">
+          <h4 class="login-title">LOG IN</h4>
+
+          <form class="login-form" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" class="form-input" required />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" class="form-input" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="login">Login</button>
+              <a href="{% url 'forget' %}" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            {% if error %}
+              <div class="error">{{ error }}</div>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

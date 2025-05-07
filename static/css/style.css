@@ -1,0 +1,361 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    
+}
+
+
+/* Navbar Styles */
+.navbar {
+    background-color: #1e5ebb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+    .navbar-left {
+    display: flex;
+    align-items: center;
+    }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+/* Center navigation links */
+.navbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between icon and text */
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #e6e6e6;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+/* Navbar right side */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-email {
+    border-right: 1px solid rgba(255,255,255,0.3);
+    padding-right: 1rem;
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* Main Content Styles */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100vh;
+}
+.content2 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;  /* Keep column for inside content */
+    padding: 20px;
+    justify-content: center;
+    background-color: white;
+    height: 80vh;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.card-body {
+    padding: 0;
+}
+
+/* Table Styles */
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.grades-table th,
+.grades-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.grades-table th {
+    font-weight: 600;
+    color: #555;
+    background-color: #f9f9f9;
+}
+
+.grades-table tr:last-child td {
+    border-bottom: none;
+}
+
+.grades-table tr:hover {
+    background-color: #f5f7fa;
+}
+
+.course-code {
+    font-weight: 500;
+}
+
+.grade-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.grid-container {
+    display: grid;
+    margin: 20px auto;
+    gap: 25px;
+    max-width: 800px;
+    justify-content: center;
+    
+}
+
+.grid-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    text-decoration: none;
+    padding: 30px 20px;
+    border-radius: 30px;
+    height: 80%;
+    
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   
+}
+
+
+.right-panel {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+  
+}
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+
+
+
+.announcement-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+.announcement-box label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.announcement-box input, 
+.announcement-box textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.announcement-icon {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.publish{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+    
+    .navbar-center, .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .navbar-right {
+        margin-top: 0.5rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .grades-table {
+        font-size: 0.9rem;
+    }
+    
+    .grades-table th, 
+    .grades-table td {
+        padding: 0.5rem 0.75rem;
+    }
+}

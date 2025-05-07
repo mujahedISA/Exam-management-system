@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>📢 ANNOUNCEMENTS</header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h1><a href="{% url 'student_page' %}">Home</a></h1>
+            <a href="{% url 'studentschedule' %}">Schedule</a>
+            <a href="{% url 'studentgrade' %}">Grade</a>
+            <a href="{% url 'stacademic_calender' %}">Academic Calendar</a>
+            <a href="{% url 'studentpaymentinformation' %}">Payment Information</a>
+            <a href="{% url 'resitannouncement' %}">Resit Exam Announcements</a>
+            <a href="{% url 'resitgrades' %}">Resit Grade</a>
+            <a href="{% url 'login' %}">Logout</a>
+        </div>
+        <div class="content2">
+            <h2>All Announcements</h2>
+            <ul>
+                {% for ann in announcements %}
+                <li>
+                    <strong>{{ ann.title }}</strong><br>
+                    <small>{{ ann.created_at|date:"Y-m-d H:i" }}</small>
+                    <p>{{ ann.text }}</p>
+                </li>
+                <hr>
+                {% empty %}
+                <li>No announcements yet.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
